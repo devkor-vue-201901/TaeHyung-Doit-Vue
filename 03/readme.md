@@ -13,3 +13,22 @@
 * 컴포넌트 내용에는 template, data, methods 등 인스턴스 옵션 속성 정의
 * 전역 컴포넌트: Vue.component('component_name', {});
 * 지역 컴포넌트: new Vue({ components: {'component_name': cmp}});
+
+# 03-3 뷰 컴포넌트 통신
+* Vue.js에서는 컴포넌트 단위로 화면을 구성하기 때문에 한 화면(페이지) 내에서도 데이터 공유에 제한이 있음
+* Vue.js에서 정의한 컴포넌트 데이터 전달 방법인 상위-하위 데이터 전달 방법을 따라야 함
+* 등록된 컴포넌트: 하위 컴포넌트
+* 등록한 인스턴스: 상위 컴포넌트
+* 상위 컴포넌트에서 props 전달, 하위에서는 상위로 이벤트만 전달
+
+* 상위->하위
+* props: 데이터 전달시 사용하는 속성
+* v-bind:propsdata="message"
+
+* 하위->상위
+* emit: 이벤트 발생
+* v-on:show-log="printText"
+
+* 하위->하위
+* 이벤트 버스
+* var eventBus = new Vue();
